@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://soqx8emngbam"]
+
+[ext_resource type="Texture2D" uid="uid://bj57s33bvg2nd" path="res://fondo negro.jpg" id="1_qhbho"]
+[ext_resource type="Script" uid="uid://dpifi5ylnuvft" path="res://escenas/salir2.gd" id="2_77xx7"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="2_ma6iv"]
+[ext_resource type="Script" uid="uid://beievj3clvrxv" path="res://escenas/volver.gd" id="3_ma6iv"]
+
+[node name="Node2D" type="Node2D" unique_id=1081982330]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1990691166]
+offset_right = 1155.0
+offset_bottom = 653.0
+texture = ExtResource("1_qhbho")
+
+[node name="Label" type="Label" parent="." unique_id=1798991837]
+offset_left = 316.0
+offset_top = 78.0
+offset_right = 841.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("2_ma6iv")
+theme_override_font_sizes/font_size = 100
+text = "Game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Salir" type="Button" parent="." unique_id=2106266486]
+offset_left = 382.0
+offset_top = 412.0
+offset_right = 752.0
+offset_bottom = 489.0
+theme_override_fonts/font = ExtResource("2_ma6iv")
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+script = ExtResource("2_77xx7")
+
+[node name="volver" type="Button" parent="." unique_id=1753796903]
+offset_left = 379.0
+offset_top = 277.0
+offset_right = 749.0
+offset_bottom = 354.0
+theme_override_fonts/font = ExtResource("2_ma6iv")
+theme_override_font_sizes/font_size = 50
+text = "Volver al menu"
+script = ExtResource("3_ma6iv")
+
+[connection signal="pressed" from="Salir" to="Salir" method="_on_pressed"]
+[connection signal="pressed" from="volver" to="volver" method="_on_pressed"]

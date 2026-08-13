@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://b0vawotrn2h6d"]
 
-[ext_resource type="Texture2D" uid="uid://bj57s33bvg2nd" path="res://fondo negro.jpg" id="1_3l6o5"]
-[ext_resource type="Script" uid="uid://b21r8pqjgt41" path="res://escenas/start.gd" id="2_in8bi"]
-[ext_resource type="Script" uid="uid://c7qxktosdx3wp" path="res://escenas/salir.gd" id="3_7kjbg"]
+[ext_resource type="Texture2D" uid="uid://d3pvbmg8ta17f" path="res://pixil-frame-0(17).png" id="1_7kjbg"]
+[ext_resource type="FontFile" uid="uid://dnieef7gw5jt5" path="res://KarmaFuture.ttf" id="2_7kjbg"]
+[ext_resource type="Script" uid="uid://b21r8pqjgt41" path="res://Scripts/start.gd" id="2_in8bi"]
+[ext_resource type="Script" uid="uid://c7qxktosdx3wp" path="res://Scripts/salir.gd" id="3_7kjbg"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="3_rir2q"]
 
 [node name="Node2D" type="Node2D" unique_id=1148712007]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1680775639]
 offset_right = 1155.0
 offset_bottom = 644.0
-texture = ExtResource("1_3l6o5")
+texture = ExtResource("1_7kjbg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1946216152]
 offset_left = 243.0
 offset_top = 44.0
 offset_right = 944.0
 offset_bottom = 206.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_7kjbg")
 theme_override_font_sizes/normal_font_size = 108
-text = "Indie ware"
+text = "Indieware"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -30,6 +34,7 @@ offset_bottom = 317.0
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=670905703]
 layout_mode = 2
 theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_rir2q")
 theme_override_font_sizes/font_size = 26
 text = "Start Game."
 script = ExtResource("2_in8bi")
@@ -37,12 +42,14 @@ script = ExtResource("2_in8bi")
 [node name="configuracion" type="Button" parent="VBoxContainer" unique_id=2060490908]
 layout_mode = 2
 theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_rir2q")
 theme_override_font_sizes/font_size = 26
 text = "configuracion"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=422691677]
 layout_mode = 2
 theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_rir2q")
 theme_override_font_sizes/font_size = 26
 text = "Salir"
 script = ExtResource("3_7kjbg")

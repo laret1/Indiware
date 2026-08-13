@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d3cwfev40v7nr"]
+
+[ext_resource type="Script" uid="uid://jpr8nyqium3t" path="res://Scripts/timer_screen.gd" id="1_7txcc"]
+[ext_resource type="Texture2D" uid="uid://ikn7dp6a38je" path="res://pixil-frame-0(18).png" id="2_bbxe7"]
+[ext_resource type="Texture2D" uid="uid://bqd854exqvan3" path="res://pixil-frame-0(19).png" id="3_mrv6u"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="4_bbxe7"]
+
+[node name="level_scene" type="Node2D" unique_id=1845535045]
+script = ExtResource("1_7txcc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1250881693]
+offset_right = 1155.0
+offset_bottom = 653.0
+texture = ExtResource("2_bbxe7")
+
+[node name="vidacontainer" type="HBoxContainer" parent="." unique_id=1359101080]
+offset_left = 122.00001
+offset_top = 94.0
+offset_right = 1318.0
+offset_bottom = 510.0
+scale = Vector2(0.75, 0.525)
+
+[node name="Vida" type="TextureRect" parent="vidacontainer" unique_id=113335245]
+layout_mode = 2
+texture = ExtResource("3_mrv6u")
+
+[node name="Vida2" type="TextureRect" parent="vidacontainer" unique_id=1305484721]
+layout_mode = 2
+texture = ExtResource("3_mrv6u")
+
+[node name="Vida3" type="TextureRect" parent="vidacontainer" unique_id=1670481685]
+layout_mode = 2
+texture = ExtResource("3_mrv6u")
+
+[node name="Vida4" type="TextureRect" parent="vidacontainer" unique_id=91274862]
+layout_mode = 2
+texture = ExtResource("3_mrv6u")
+
+[node name="Vida5" type="TextureRect" parent="vidacontainer" unique_id=733298943]
+layout_mode = 2
+texture = ExtResource("3_mrv6u")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1736877871]
+offset_left = 495.0
+offset_top = 321.0
+offset_right = 675.0
+offset_bottom = 391.0
+theme_override_fonts/normal_font = ExtResource("4_bbxe7")
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=2056672419]
+offset_left = 540.0
+offset_top = 510.0
+offset_right = 687.0
+offset_bottom = 577.0
+theme_override_fonts/normal_font = ExtResource("4_bbxe7")
+theme_override_font_sizes/normal_font_size = 48
+text = "0.0"

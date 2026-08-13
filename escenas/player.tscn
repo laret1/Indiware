@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dp27tirjcukhb"]
+
+[ext_resource type="Script" uid="uid://dk2kxkxyw6xnp" path="res://Scripts/player.gd" id="1_kkt6c"]
+[ext_resource type="SpriteFrames" uid="uid://q1v0qbfda3mi" path="res://escenas/animacion.tres" id="2_kkt6c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
+radius = 18.0
+height = 92.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1724094146 node_paths=PackedStringArray("animacion", "area_2d")]
+script = ExtResource("1_kkt6c")
+animacion = NodePath("animacion")
+area_2d = NodePath("Area2D")
+
+[node name="animacion" type="AnimatedSprite2D" parent="." unique_id=1987493423]
+position = Vector2(1, 0)
+scale = Vector2(5.535, 5.535)
+sprite_frames = ExtResource("2_kkt6c")
+animation = &"saltar"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=813296395]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1326358850]
+shape = SubResource("CapsuleShape2D_kkt6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196950435]
+shape = SubResource("CapsuleShape2D_kkt6c")

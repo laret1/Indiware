@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dtjuc6kxa2l6i"]
+
+[ext_resource type="Script" uid="uid://cb3f2jmolhvwb" path="res://Scripts/minigame_2.gd" id="1_80d3y"]
+[ext_resource type="Texture2D" uid="uid://bwit4d5vobk43" path="res://bgCandy.jpg" id="2_rrrh5"]
+[ext_resource type="Texture2D" uid="uid://cujy2tdksqelr" path="res://icon.png" id="3_2jrba"]
+[ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="4_nwrr3"]
+[ext_resource type="Script" uid="uid://bp4vfgu1wnk8j" path="res://Scripts/button_1.gd" id="4_rrrh5"]
+[ext_resource type="Script" uid="uid://n5xkgg2t1kaq" path="res://Scripts/button_2.gd" id="5_2jrba"]
+[ext_resource type="Script" uid="uid://dh0h4i2fcghau" path="res://Scripts/button_3.gd" id="6_gurdk"]
+[ext_resource type="Script" uid="uid://cf6d1amxdw2op" path="res://Scripts/button_4.gd" id="7_li1l4"]
+[ext_resource type="Script" uid="uid://b0qre2rf64pvd" path="res://Scripts/button_5.gd" id="8_lk6bk"]
+
+[node name="minigame_2" type="Node2D" unique_id=1252585445]
+script = ExtResource("1_80d3y")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1847763930]
+scroll_offset = Vector2(-156, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1453331185]
+offset_right = 1157.0
+offset_bottom = 653.0
+texture = ExtResource("2_rrrh5")
+
+[node name="button_1" type="TextureButton" parent="." unique_id=419831656]
+offset_left = 177.0
+offset_top = 257.0
+offset_right = 305.0
+offset_bottom = 385.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_2jrba")
+script = ExtResource("4_rrrh5")
+
+[node name="button_2" type="TextureButton" parent="." unique_id=713001086]
+offset_left = 58.0
+offset_top = 450.0
+offset_right = 186.0
+offset_bottom = 578.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_2jrba")
+script = ExtResource("5_2jrba")
+
+[node name="button_3" type="TextureButton" parent="." unique_id=339314587]
+offset_left = 340.0
+offset_top = 384.0
+offset_right = 468.0
+offset_bottom = 512.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_2jrba")
+script = ExtResource("6_gurdk")
+
+[node name="button_4" type="TextureButton" parent="." unique_id=1270836474]
+offset_left = 566.0
+offset_top = 235.0
+offset_right = 694.0
+offset_bottom = 363.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_2jrba")
+script = ExtResource("7_li1l4")
+
+[node name="button_5" type="TextureButton" parent="." unique_id=1416899997]
+offset_left = 858.0
+offset_top = 352.0
+offset_right = 986.0
+offset_bottom = 480.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_2jrba")
+script = ExtResource("8_lk6bk")
+
+[node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("4_nwrr3")]
+position = Vector2(347, 58)
+
+[connection signal="pressed" from="button_1" to="button_1" method="_on_pressed"]
+[connection signal="pressed" from="button_2" to="button_2" method="_on_pressed"]
+[connection signal="pressed" from="button_3" to="button_3" method="_on_pressed"]
+[connection signal="pressed" from="button_4" to="button_4" method="_on_pressed"]
+[connection signal="pressed" from="button_5" to="button_5" method="_on_pressed"]

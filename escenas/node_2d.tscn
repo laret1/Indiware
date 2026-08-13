@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://s838wlco2t0b"]
+
+[ext_resource type="Script" uid="uid://cq0hxmcqx8yta" path="res://Scripts/node_2d.gd" id="1_1ac00"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="2_67bck"]
+
+[node name="ThemedTimer" type="Node2D" unique_id=1194462491]
+script = ExtResource("1_1ac00")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=242120247]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.4000006, 3.52)
+theme_override_fonts/normal_font = ExtResource("2_67bck")
