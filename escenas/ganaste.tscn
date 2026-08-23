@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dddej0ihb4fh0"]
+
+[ext_resource type="Script" uid="uid://daubgpwm8r481" path="res://escenas/ganaste.gd" id="1_fbasp"]
+[ext_resource type="Texture2D" uid="uid://ikn7dp6a38je" path="res://pixil-frame-0(18).png" id="1_g0qwb"]
+[ext_resource type="FontFile" uid="uid://dnieef7gw5jt5" path="res://KarmaFuture.ttf" id="2_fbasp"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="3_35fbv"]
+[ext_resource type="Script" uid="uid://b21r8pqjgt41" path="res://Scripts/start.gd" id="4_ix71s"]
+[ext_resource type="Script" uid="uid://c7qxktosdx3wp" path="res://Scripts/salir.gd" id="5_r41ll"]
+
+[node name="ganaste" type="Node2D" unique_id=1109545240]
+script = ExtResource("1_fbasp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1183787560]
+offset_left = 7.0
+offset_right = 1159.0
+offset_bottom = 648.0
+texture = ExtResource("1_g0qwb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1243918776]
+offset_left = 243.0
+offset_top = 44.0
+offset_right = 944.0
+offset_bottom = 206.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_fbasp")
+theme_override_font_sizes/normal_font_size = 108
+text = "Ganaste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=425724416]
+offset_left = 492.0
+offset_top = 277.0
+offset_right = 532.0
+offset_bottom = 317.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=58509279]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_35fbv")
+theme_override_font_sizes/font_size = 26
+text = "Volver a iniciar"
+script = ExtResource("4_ix71s")
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=301621098]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_35fbv")
+theme_override_font_sizes/font_size = 26
+text = "Salir"
+script = ExtResource("5_r41ll")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_pressed"]

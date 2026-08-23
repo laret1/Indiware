@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://3vuupi35137d"]
+
+[ext_resource type="Script" uid="uid://clq65fhryo5ua" path="res://escenas/minigame_4.gd" id="1_d5x0v"]
+[ext_resource type="Texture2D" uid="uid://b3ht8shw112oi" path="res://balatro-main-menu-image-without-ui-elements-v0-yl1be0ojeevc1.webp" id="1_xntng"]
+[ext_resource type="Texture2D" uid="uid://cmoow0ev5y07v" path="res://Balatro-red_deck.webp" id="2_d5x0v"]
+[ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="4_yp0mb"]
+[ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="5_tpn17"]
+
+[node name="minigame_4" type="Node2D" unique_id=1202998299]
+script = ExtResource("1_d5x0v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2136457910]
+offset_right = 2560.0
+offset_bottom = 1455.0266
+scale = Vector2(0.45918876, 0.44603992)
+texture = ExtResource("1_xntng")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1129016063]
+offset_left = 977.0
+offset_top = 446.0
+offset_right = 1115.0
+offset_bottom = 632.0
+texture = ExtResource("2_d5x0v")
+
+[node name="BotonJugar" type="Button" parent="." unique_id=580438557]
+offset_left = 886.0
+offset_top = 201.0
+offset_right = 938.0
+offset_bottom = 226.0
+scale = Vector2(4.16, 4.16)
+theme_override_fonts/font = ExtResource("4_yp0mb")
+text = "Jugar"
+
+[node name="LabelResultado" type="Label" parent="." unique_id=1249367611]
+offset_left = 893.0
+offset_top = 161.0
+offset_right = 933.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("4_yp0mb")
+
+[node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("5_tpn17")]

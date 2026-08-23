@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dxa8n6opbdiay"]
+
+[ext_resource type="Script" uid="uid://bxeexvufwugxc" path="res://minigame_5.gd" id="1_uqyit"]
+[ext_resource type="Texture2D" uid="uid://cp6jv1i2yvw7a" path="res://fondo among us.jpg" id="2_s6lyv"]
+[ext_resource type="Texture2D" uid="uid://xf3fwxlof5bb" path="res://mision tarjeta amongus.webp" id="3_lcloc"]
+[ext_resource type="Texture2D" uid="uid://ruy1ad687slp" path="res://tarjeta amongus.jpg" id="4_r6yo8"]
+[ext_resource type="Texture2D" uid="uid://b8hhh6lw2dxis" path="res://fila-2-columna-1.webp" id="5_fh8ly"]
+[ext_resource type="Texture2D" uid="uid://twrb8y828tpg" path="res://tarea completada(1).jpg" id="6_ms0pg"]
+[ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="7_lcloc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqyit"]
+size = Vector2(947.143, 100.00004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4v87"]
+size = Vector2(527.69684, 317.7842)
+
+[node name="minigame_5" type="Node2D" unique_id=2104967627]
+position = Vector2(208.99998, -12)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_uqyit")
+metadata/_edit_vertical_guides_ = [-96.0]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=359655591]
+scale = Vector2(0.99999994, 0.99999994)
+scroll_offset = Vector2(287.14288, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect3" type="TextureRect" parent="Parallax2D" unique_id=353924483]
+offset_left = -305.7142
+offset_top = -24.28571
+offset_right = 1942.2196
+offset_bottom = 1643.7142
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("2_s6lyv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1869331396]
+offset_right = 1345.0
+offset_bottom = 1346.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_lcloc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Lector" type="Area2D" parent="." unique_id=2040235]
+position = Vector2(-17.142792, 11.428572)
+scale = Vector2(0.9999996, 0.9999996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lector" unique_id=1371199009]
+position = Vector2(482.1429, 267.14285)
+shape = SubResource("RectangleShape2D_uqyit")
+
+[node name="Tarjeta" type="Area2D" parent="." unique_id=673684280]
+position = Vector2(11.428595, 518.5715)
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureRect3" type="TextureRect" parent="Tarjeta" unique_id=1211760150]
+offset_right = 546.0
+offset_bottom = 326.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_r6yo8")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tarjeta" unique_id=1341151230]
+position = Vector2(186.7348, 113.26538)
+scale = Vector2(0.70000005, 0.70000005)
+shape = SubResource("RectangleShape2D_j4v87")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1953998519]
+offset_left = 1.4285934
+offset_top = 167.14287
+offset_right = 1346.4286
+offset_bottom = 382.14288
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_fh8ly")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=673270981]
+offset_left = 74.28573
+offset_top = 21.428574
+offset_right = 1213.2858
+offset_bottom = 120.42857
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_ms0pg")
+metadata/_edit_use_anchors_ = true
+
+[node name="InicioTarjeta" type="Marker2D" parent="." unique_id=1384092258]
+position = Vector2(-8.571406, 255.7143)
+
+[node name="FinTarjeta" type="Marker2D" parent="." unique_id=256835211]
+position = Vector2(942.8572, 269.99994)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Timer" type="Timer" parent="." unique_id=1538617563]
+
+[node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("7_lcloc")]

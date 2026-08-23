@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://soqx8emngbam"]
 
 [ext_resource type="Texture2D" uid="uid://bj57s33bvg2nd" path="res://fondo negro.jpg" id="1_qhbho"]
-[ext_resource type="Script" uid="uid://dpifi5ylnuvft" path="res://escenas/salir2.gd" id="2_77xx7"]
+[ext_resource type="Script" uid="uid://dpifi5ylnuvft" path="res://Scripts/salir2.gd" id="2_77xx7"]
 [ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="2_ma6iv"]
-[ext_resource type="Script" uid="uid://beievj3clvrxv" path="res://escenas/volver.gd" id="3_ma6iv"]
+[ext_resource type="Script" uid="uid://beievj3clvrxv" path="res://Scripts/volver.gd" id="3_ma6iv"]
 
 [node name="Node2D" type="Node2D" unique_id=1081982330]
 

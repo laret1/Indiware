@@ -39,13 +39,6 @@ theme_override_font_sizes/font_size = 26
 text = "Start Game."
 script = ExtResource("2_in8bi")
 
-[node name="configuracion" type="Button" parent="VBoxContainer" unique_id=2060490908]
-layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_fonts/font = ExtResource("3_rir2q")
-theme_override_font_sizes/font_size = 26
-text = "configuracion"
-
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=422691677]
 layout_mode = 2
 theme_override_constants/outline_size = 14

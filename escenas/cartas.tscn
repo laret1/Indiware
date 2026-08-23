@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cdsryaheyy6kk"]
+
+[ext_resource type="Script" uid="uid://dkog1u5wj38kn" path="res://escenas/cartas.gd" id="1_7midb"]
+[ext_resource type="Texture2D" uid="uid://icmcckej3way" path="res://sprite.png" id="1_y6wur"]
+[ext_resource type="SpriteFrames" uid="uid://cm7jioo7aleia" path="res://escenas/animacion balatro cartas.tres" id="2_7midb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4xxg"]
+size = Vector2(69, 93)
+
+[node name="Area2D" type="Area2D" unique_id=1158791696]
+position = Vector2(478, 276)
+scale = Vector2(2, 2)
+script = ExtResource("1_7midb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=640295962]
+offset_left = -33.0
+offset_top = -41.0
+offset_right = 36.0
+offset_bottom = 52.0
+texture = ExtResource("1_y6wur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44135339]
+position = Vector2(2, 6)
+sprite_frames = ExtResource("2_7midb")
+animation = &"corazon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=340937609]
+position = Vector2(1.5, 5.5)
+shape = SubResource("RectangleShape2D_e4xxg")
