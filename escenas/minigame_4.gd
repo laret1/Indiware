@@ -5,7 +5,7 @@ var timer_end = false
 @onready var boton_jugar: Button = $BotonJugar
 @onready var label_resultado: Label = $LabelResultado
 @onready var timer: Node2D = $ThemedTimer 
-
+@onready var ganar = $"sonido ganar"
 var palos = ["trebol", "corazon"]
 var cartas_en_mano: Array = []
 
@@ -13,7 +13,7 @@ func _ready():
 	var mano = repartir_mano_por_tipo()
 	mostrar_mano(mano)
 	boton_jugar.pressed.connect(_on_boton_jugar_pressed)
-	await timer.Timer(3.0)
+	await timer.Timer(7.0)
 	#after this is completed...
 	timer_end = true 
 
@@ -148,10 +148,14 @@ func _on_boton_jugar_pressed():
 	if label_resultado:
 		label_resultado.text = resultado
 		if es_jugada_valida(resultado):
+			await get_tree().create_timer(1.0).timeout
 			label_resultado.modulate = Color.GREEN
 			get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
 		else:
 			label_resultado.modulate = Color.RED
+			Global.lives -= 1
+			Global.minigames_done -=1
+			get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
 
 func evaluar_mano(mano: Array) -> String:
 	if mano.size() != 5:
@@ -198,8 +202,11 @@ func evaluar_mano(mano: Array) -> String:
 	return "Sin jugada"
 
 func es_jugada_valida(resultado: String) -> bool:
+	ganar.playing = true
+	
 	var jugadas_ganadoras = ["Par", "Trío", "Doble par", "Full", "Color", "Escalera", "Poker", "Escalera de color"]
 	return resultado in jugadas_ganadoras
+	
 func _process(delta: float) -> void:
 	if timer_end:
 		Global.lives -= 1

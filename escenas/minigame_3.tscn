@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://bpuwf22vr4aie" path="res://escenas/player.gd" id="5_ap6in"]
 [ext_resource type="Texture2D" uid="uid://tnmufoyhllt6" path="res://Undertale.png" id="5_jeop2"]
 [ext_resource type="Script" uid="uid://b678ax1dex382" path="res://escenas/hitbox.gd" id="7_wqqg4"]
+[ext_resource type="AudioStream" uid="uid://cs3uhcfq7yy5y" path="res://Undertale - Megalovania.mp3" id="8_23qeu"]
+[ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="9_u8q48"]
+[ext_resource type="AudioStream" uid="uid://3lusvh6xeueh" path="res://gaster_blaster_sound_effect_1.mp3" id="10_u8q48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjftn"]
 size = Vector2(9.9999695, 200.72987)
@@ -22,6 +25,7 @@ offset_bottom = 654.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1919847680]
+z_index = 1
 offset_left = 506.99997
 offset_top = 55.0
 offset_right = 727.0
@@ -95,3 +99,10 @@ script = ExtResource("7_wqqg4")
 [node name="Playercollision" type="CollisionShape2D" parent="Player/Area2D" unique_id=426906080]
 position = Vector2(587, 458)
 shape = SubResource("RectangleShape2D_ap6in")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=786926828]
+stream = ExtResource("8_23qeu")
+script = ExtResource("9_u8q48")
+
+[node name="GasterBlasterSoundEffect1" type="AudioStreamPlayer" parent="." unique_id=1998557963]
+stream = ExtResource("10_u8q48")

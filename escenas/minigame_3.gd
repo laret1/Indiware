@@ -9,7 +9,7 @@ var timer_end = false
 	$posiciones/pos3,
 	$posiciones/pos4
 ]
-
+@onready var gasterblaster = $GasterBlasterSoundEffect1
 var blaster_scene = preload("res://escenas/gaster_blaster.tscn")
 
 # Nombre del nodo objetivo (lo puedes cambiar desde el editor o por código)
@@ -42,7 +42,7 @@ func spawn_blaster_at(pos: Vector2, target_pos: Vector2) -> void:
 	add_child(blaster)              # <- primero se agrega al árbol
 	blaster.global_position = pos   # <- luego se posiciona
 	blaster.mirar_hacia(target_pos) # <- y luego se rota (usa la función del blaster, con su offset)
-
+	gasterblaster.playing = true
 	await blaster.finished # espera a que aparezca, se quede visible, y desaparezca
 
 func _process(delta: float) -> void:

@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var Termina = $Terminar_Tarea
 @onready var tarjeta: Area2D = $Tarjeta
 @onready var inicio_tarjeta: Marker2D = $InicioTarjeta
 @onready var fin_tarjeta: Marker2D = $FinTarjeta
@@ -37,7 +37,7 @@ func _on_tarjeta_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			arrastrando = true
-			tarjeta.position.y = inicio_tarjeta.position.y  # snap y bloqueo de Y, aquí mismo
+			tarjeta.position.y = inicio_tarjeta.position.y 
 			mouse_anterior = get_global_mouse_position()
 		elif arrastrando:
 			arrastrando = false
@@ -55,8 +55,7 @@ func _process(_delta):
 			cronometro_iniciado = true
 			timer.start()
 
-		tarjeta.position.x += movimiento.x  # ← solo X se mueve; Y se queda fijo
-		# tarjeta.position.y NO se toca aquí — permanece bloqueado en inicio_tarjeta.position.y
+		tarjeta.position.x += movimiento.x  
 
 	if cronometro_iniciado and abs(tarjeta.position.x - fin_tarjeta.position.x) <= margen_llegada:
 		tarjeta.position.x = fin_tarjeta.position.x
@@ -77,8 +76,13 @@ func evaluar_resultado():
 	timer.stop()
 	if tiempo_usado < tiempo_minimo:
 		terminar_ronda(false)
+		tarjeta.visible = false
 	else:
+		tarjeta.visible = false
+		Termina.playing = true
+		await get_tree().create_timer(1.0).timeout
 		terminar_ronda(true)
+		
 
 func terminar_ronda(acierto: bool):
 	if not juego_activo:

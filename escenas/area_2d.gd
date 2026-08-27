@@ -25,6 +25,7 @@ func mirar_hacia(target_pos: Vector2) -> void:
 	rotation += deg_to_rad(sprite_rotation_offset_deg)
 
 func _hacer_aparecer() -> void:
+	
 	sprite.visible = true
 	collision_shape.set_deferred("disabled", false)
 

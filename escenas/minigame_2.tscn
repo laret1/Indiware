@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="4_nwrr3"]
 [ext_resource type="Script" uid="uid://bp4vfgu1wnk8j" path="res://Scripts/button_1.gd" id="4_rrrh5"]
 [ext_resource type="Script" uid="uid://n5xkgg2t1kaq" path="res://Scripts/button_2.gd" id="5_2jrba"]
+[ext_resource type="AudioStream" uid="uid://c2gjqksunrkgd" path="res://u_xg7ssi08yr-button-clicks-572422.mp3" id="5_li1l4"]
 [ext_resource type="Script" uid="uid://dh0h4i2fcghau" path="res://Scripts/button_3.gd" id="6_gurdk"]
 [ext_resource type="Script" uid="uid://cf6d1amxdw2op" path="res://Scripts/button_4.gd" id="7_li1l4"]
 [ext_resource type="Script" uid="uid://b0qre2rf64pvd" path="res://Scripts/button_5.gd" id="8_lk6bk"]
+[ext_resource type="AudioStream" uid="uid://1b4n6pt76t2s" path="res://05. Click Forever.mp3" id="10_gurdk"]
+[ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="11_li1l4"]
 
 [node name="minigame_2" type="Node2D" unique_id=1252585445]
 script = ExtResource("1_80d3y")
@@ -23,7 +26,7 @@ offset_right = 1157.0
 offset_bottom = 653.0
 texture = ExtResource("2_rrrh5")
 
-[node name="button_1" type="TextureButton" parent="." unique_id=419831656]
+[node name="button_1" type="TextureButton" parent="." unique_id=419831656 node_paths=PackedStringArray("click")]
 offset_left = 177.0
 offset_top = 257.0
 offset_right = 305.0
@@ -31,8 +34,9 @@ offset_bottom = 385.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("3_2jrba")
 script = ExtResource("4_rrrh5")
+click = NodePath("../galletaclick")
 
-[node name="button_2" type="TextureButton" parent="." unique_id=713001086]
+[node name="button_2" type="TextureButton" parent="." unique_id=713001086 node_paths=PackedStringArray("click")]
 offset_left = 58.0
 offset_top = 450.0
 offset_right = 186.0
@@ -40,8 +44,9 @@ offset_bottom = 578.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("3_2jrba")
 script = ExtResource("5_2jrba")
+click = NodePath("../galletaclick")
 
-[node name="button_3" type="TextureButton" parent="." unique_id=339314587]
+[node name="button_3" type="TextureButton" parent="." unique_id=339314587 node_paths=PackedStringArray("click")]
 offset_left = 340.0
 offset_top = 384.0
 offset_right = 468.0
@@ -49,8 +54,9 @@ offset_bottom = 512.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("3_2jrba")
 script = ExtResource("6_gurdk")
+click = NodePath("../galletaclick")
 
-[node name="button_4" type="TextureButton" parent="." unique_id=1270836474]
+[node name="button_4" type="TextureButton" parent="." unique_id=1270836474 node_paths=PackedStringArray("click")]
 offset_left = 566.0
 offset_top = 235.0
 offset_right = 694.0
@@ -58,8 +64,9 @@ offset_bottom = 363.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("3_2jrba")
 script = ExtResource("7_li1l4")
+click = NodePath("../galletaclick")
 
-[node name="button_5" type="TextureButton" parent="." unique_id=1416899997]
+[node name="button_5" type="TextureButton" parent="." unique_id=1416899997 node_paths=PackedStringArray("click")]
 offset_left = 858.0
 offset_top = 352.0
 offset_right = 986.0
@@ -67,9 +74,17 @@ offset_bottom = 480.0
 scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("3_2jrba")
 script = ExtResource("8_lk6bk")
+click = NodePath("../galletaclick")
 
 [node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("4_nwrr3")]
 position = Vector2(347, 58)
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=468503718]
+stream = ExtResource("10_gurdk")
+script = ExtResource("11_li1l4")
+
+[node name="galletaclick" type="AudioStreamPlayer" parent="." unique_id=1023025935]
+stream = ExtResource("5_li1l4")
 
 [connection signal="pressed" from="button_1" to="button_1" method="_on_pressed"]
 [connection signal="pressed" from="button_2" to="button_2" method="_on_pressed"]

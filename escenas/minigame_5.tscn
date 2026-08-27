@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b8hhh6lw2dxis" path="res://fila-2-columna-1.webp" id="5_fh8ly"]
 [ext_resource type="Texture2D" uid="uid://twrb8y828tpg" path="res://tarea completada(1).jpg" id="6_ms0pg"]
 [ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="7_lcloc"]
+[ext_resource type="AudioStream" uid="uid://dqwuqe6o03k4a" path="res://13. Hide n Seek Danger Level 2.mp3" id="8_fh8ly"]
+[ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="9_ms0pg"]
+[ext_resource type="AudioStream" uid="uid://0ptpm7630073" path="res://69_inWxWuv.mp3" id="10_j4v87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqyit"]
 size = Vector2(947.143, 100.00004)
@@ -93,3 +96,10 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Timer" type="Timer" parent="." unique_id=1538617563]
 
 [node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("7_lcloc")]
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=1297374792]
+stream = ExtResource("8_fh8ly")
+script = ExtResource("9_ms0pg")
+
+[node name="Terminar_Tarea" type="AudioStreamPlayer" parent="." unique_id=1663820640]
+stream = ExtResource("10_j4v87")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs3uhcfq7yy5y"
+path="res://.godot/imported/Undertale - Megalovania.mp3-c7fc5f619523ec75eebde1b1b92d47d3.mp3str"
+
+[deps]
+
+source_file="res://Undertale - Megalovania.mp3"
+dest_files=["res://.godot/imported/Undertale - Megalovania.mp3-c7fc5f619523ec75eebde1b1b92d47d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

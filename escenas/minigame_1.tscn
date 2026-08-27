@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dp27tirjcukhb" path="res://escenas/player.tscn" id="5_bintx"]
 [ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="6_pvfgn"]
 [ext_resource type="Texture2D" uid="uid://cfdak33mqdlko" path="res://tile_set.png" id="7_i018x"]
+[ext_resource type="AudioStream" uid="uid://bs2pbu0nob2pt" path="res://01. Ground Theme.mp3" id="7_m7gtl"]
+[ext_resource type="AudioStream" uid="uid://df3ti0a64ryj5" path="res://salto-mario.mp3" id="7_spnmb"]
+[ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="8_spnmb"]
 
 [sub_resource type="Animation" id="Animation_sdbi7"]
 length = 0.001
@@ -713,7 +716,15 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAAYAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAARAAQAAAABAAAAAAAMAAMAAAABAAAAAAAMAAIAAAABAAAAAAASAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_spnmb")
 
-[node name="Player" parent="." unique_id=1724094146 instance=ExtResource("5_bintx")]
+[node name="Player" parent="." unique_id=1724094146 node_paths=PackedStringArray("sonido_salto") instance=ExtResource("5_bintx")]
 position = Vector2(72, 510)
+sonido_salto = NodePath("audio salto")
+
+[node name="audio salto" type="AudioStreamPlayer" parent="Player" unique_id=2056449283]
+stream = ExtResource("7_spnmb")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=1328345065]
+stream = ExtResource("7_m7gtl")
+script = ExtResource("8_spnmb")
 
 [connection signal="garlic_collected" from="champiñon" to="." method="_on_champiñon_garlic_collected"]

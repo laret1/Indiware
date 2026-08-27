@@ -11,7 +11,7 @@
 script = ExtResource("1_fbasp")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1183787560]
-offset_left = 7.0
+offset_left = -3.0
 offset_right = 1159.0
 offset_bottom = 648.0
 texture = ExtResource("1_g0qwb")

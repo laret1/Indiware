@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtcvokjqt7ckr"
+path="res://.godot/imported/Paladin Strait_spotdown.org.mp3-47e6052d6a9c0389150b078f97bcc627.mp3str"
+
+[deps]
+
+source_file="res://Paladin Strait_spotdown.org.mp3"
+dest_files=["res://.godot/imported/Paladin Strait_spotdown.org.mp3-47e6052d6a9c0389150b078f97bcc627.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
