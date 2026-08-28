@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ikn7dp6a38je" path="res://pixil-frame-0(18).png" id="2_bbxe7"]
 [ext_resource type="Texture2D" uid="uid://bqd854exqvan3" path="res://pixil-frame-0(19).png" id="3_mrv6u"]
 [ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="4_bbxe7"]
+[ext_resource type="AudioStream" uid="uid://sevryh3xvlqp" path="res://freesound_gamestudio-purchase-success-384963.mp3" id="5_mrv6u"]
 
 [node name="level_scene" type="Node2D" unique_id=1845535045]
 script = ExtResource("1_7txcc")
@@ -57,3 +58,6 @@ offset_bottom = 577.0
 theme_override_fonts/normal_font = ExtResource("4_bbxe7")
 theme_override_font_sizes/normal_font_size = 48
 text = "0.0"
+
+[node name="sonido_pasar_ronda" type="AudioStreamPlayer" parent="." unique_id=401358193]
+stream = ExtResource("5_mrv6u")

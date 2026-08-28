@@ -7,11 +7,15 @@ extends Node2D
 @onready var garlic_5: TextureRect = $vidacontainer/Vida5
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
-
+@onready var sonido_ganar:AudioStreamPlayer = $sonido_pasar_ronda
 var time
 func perder ():
 			get_tree().change_scene_to_file("res://escenas/pantalla_game_over.tscn")
 func _ready() -> void:
+	if Global.minigames_done != 0:
+		sonido_ganar.playing = true
+	else:
+		pass
 	await Timer(5.0) # using the function created
 	
 	
@@ -29,6 +33,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void: # runs EVERY FRAME
+
 	if Global.lives <= 0:
 		perder()
 
