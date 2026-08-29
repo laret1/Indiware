@@ -138,28 +138,25 @@ func mostrar_mano(mano: Array):
 		cartas_en_mano.append(carta_instancia)
 
 func _on_boton_jugar_pressed():
-	var mano_completa = []
+	var seleccionadas = []
 	for carta in cartas_en_mano:
-		mano_completa.append({"palo": carta.palo, "valor": carta.valor})
+		if carta.seleccionada:
+			seleccionadas.append({"palo": carta.palo, "valor": carta.valor})
 
-	var resultado = evaluar_mano(mano_completa)
+	var resultado = evaluar_mano(seleccionadas)
 	print("Jugada: ", resultado)
 
 	if label_resultado:
 		label_resultado.text = resultado
 		if es_jugada_valida(resultado):
-			await get_tree().create_timer(1.0).timeout
 			label_resultado.modulate = Color.GREEN
 			get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
 		else:
 			label_resultado.modulate = Color.RED
-			Global.lives -= 1
-			Global.minigames_done -=1
-			get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
 
 func evaluar_mano(mano: Array) -> String:
-	if mano.size() != 5:
-		return "Mano incompleta (%d cartas)" % mano.size()
+	if mano.size() < 2:
+		return "Selecciona más cartas"
 
 	var valores = []
 	var palos_mano = []
@@ -173,33 +170,33 @@ func evaluar_mano(mano: Array) -> String:
 	var repeticiones = conteo.values()
 	repeticiones.sort()
 	repeticiones.reverse()
-
-	var es_color = palos_mano.count(palos_mano[0]) == palos_mano.size()
-
 	valores.sort()
-	var es_escalera = true
-	for i in range(1, valores.size()):
-		if valores[i] != valores[i-1] + 1:
-			es_escalera = false
-			break
 
-	if es_color and es_escalera:
-		return "Escalera de color"
-	if repeticiones[0] == 4:
-		return "Poker"
-	if repeticiones[0] == 3 and repeticiones.size() > 1 and repeticiones[1] == 2:
-		return "Full"
-	if es_color:
-		return "Color"
-	if es_escalera:
-		return "Escalera"
-	if repeticiones[0] == 3:
-		return "Trío"
-	if repeticiones[0] == 2 and repeticiones.size() > 1 and repeticiones[1] == 2:
-		return "Doble par"
-	if repeticiones[0] == 2:
-		return "Par"
-	return "Sin jugada"
+	match mano.size():
+		2:
+			if repeticiones[0] == 2:
+				return "Par"
+			return "Sin jugada"
+		4:
+			if repeticiones.size() >= 2 and repeticiones[0] == 2 and repeticiones[1] == 2:
+				return "Doble par"
+			return "Sin jugada"
+		5:
+			var es_color = palos_mano.count(palos_mano[0]) == palos_mano.size()
+			var es_escalera = true
+			for i in range(1, valores.size()):
+				if valores[i] != valores[i-1] + 1:
+					es_escalera = false
+					break
+			if es_color and es_escalera:
+				return "Escalera de color"
+			if es_color:
+				return "Color"
+			if es_escalera:
+				return "Escalera"
+			return "Sin jugada"
+		_:
+			return "Sin jugada"
 
 func es_jugada_valida(resultado: String) -> bool:
 	ganar.playing = true
