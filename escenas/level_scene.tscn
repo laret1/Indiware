@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://sevryh3xvlqp" path="res://freesound_gamestudio-purchase-success-384963.mp3" id="5_mrv6u"]
 [ext_resource type="AudioStream" uid="uid://ckd30y447hmu5" path="res://djartmusic-i-love-my-8-bit-game-console-301272.mp3" id="6_2x7ke"]
 [ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="7_6gt4u"]
+[ext_resource type="AudioStream" uid="uid://ct1t5a1gskl0k" path="res://47313572-experimental-8-bit-sound-270302.mp3" id="8_6gt4u"]
 
 [node name="level_scene" type="Node2D" unique_id=1845535045]
 script = ExtResource("1_7txcc")
@@ -68,3 +69,6 @@ stream = ExtResource("5_mrv6u")
 stream = ExtResource("6_2x7ke")
 autoplay = true
 script = ExtResource("7_6gt4u")
+
+[node name="sonido_perder_ronda" type="AudioStreamPlayer" parent="." unique_id=1374699145]
+stream = ExtResource("8_6gt4u")

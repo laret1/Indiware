@@ -8,6 +8,7 @@ extends Node2D
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
 @onready var sonido_ganar:AudioStreamPlayer = $sonido_pasar_ronda
+@onready var sonido_perder:AudioStreamPlayer = $sonido_perder_ronda
 var time
 func perder ():
 			get_tree().change_scene_to_file("res://escenas/pantalla_game_over.tscn")
@@ -17,7 +18,7 @@ func _ready() -> void:
 	elif Global.minigame_win == 2:
 		pass
 	elif Global.minigame_win == 0:
-		pass
+		sonido_perder.playing = true
 	await Timer(5.0) # using the function created
 	
 	
