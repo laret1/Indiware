@@ -25,10 +25,11 @@ func _process(delta: float) -> void: # running every frame brochacho
 			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
 		else:
 			get_tree().change_scene_to_file("res://escenas/level_scene.tscn") # go back to the intermission scene
-	
+			Global.minigame_win= 1
 	if timer_end: # if the timer does end...
 		Global.minigames_done -=1 #go back a minigame
 		Global.lives -= 1 # lose ur lives
+		Global.minigame_win= 0
 		get_tree().change_scene_to_file("res://escenas/level_scene.tscn") # back to intermission
 		
 

@@ -48,3 +48,4 @@ func spawn_blaster_at(pos: Vector2, target_pos: Vector2) -> void:
 func _process(delta: float) -> void:
 	if timer_end:
 		get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
+		Global.minigame_win= 1

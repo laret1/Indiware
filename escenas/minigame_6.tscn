@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://b30xyyt5iq2vb"]
+
+[ext_resource type="Texture2D" uid="uid://cqg7hga3de3k4" path="res://fondo_flappybird.png" id="1_ggtba"]
+[ext_resource type="Script" uid="uid://b7bte4cwwx68" path="res://escenas/minigame_6.gd" id="1_rpgen"]
+[ext_resource type="Texture2D" uid="uid://jujx6i430ow" path="res://flappy bird sprite(2).png" id="2_g3y5k"]
+[ext_resource type="Script" uid="uid://blwxfxsbs5omh" path="res://escenas/pajarito.gd" id="2_y884q"]
+[ext_resource type="AudioStream" uid="uid://dc7ps50b3kygf" path="res://05. Wing.mp3" id="5_p388j"]
+[ext_resource type="Script" uid="uid://s8h25slxgaad" path="res://escenas/instanciador_de_tuberias.gd" id="5_rpgen"]
+[ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="6_0vjd0"]
+[ext_resource type="PackedScene" uid="uid://b1uwstcevcgx4" path="res://escenas/tuberias/tuberia.tscn" id="6_geapt"]
+[ext_resource type="Texture2D" uid="uid://jyto5otf2bv5" path="res://flappy bird sprite(3).png" id="6_rpgen"]
+[ext_resource type="PackedScene" uid="uid://s838wlco2t0b" path="res://escenas/node_2d.tscn" id="8_ybg5o"]
+[ext_resource type="AudioStream" uid="uid://dbvg0iy0mqrgh" path="res://Energy Theme - Jextor.wav" id="11_b6wap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggtba"]
+size = Vector2(20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y884q"]
+atlas = ExtResource("2_g3y5k")
+region = Rect2(0, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m4c1"]
+atlas = ExtResource("2_g3y5k")
+region = Rect2(54, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geapt"]
+atlas = ExtResource("2_g3y5k")
+region = Rect2(108, 0, 54, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oh5c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y884q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geapt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v5b1"]
+size = Vector2(342, 97)
+
+[node name="minigame_6" type="Node2D" unique_id=331366906]
+script = ExtResource("1_rpgen")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1700644652]
+offset_left = 411.0
+offset_top = -4.0
+offset_right = 696.0
+offset_bottom = 504.0
+scale = Vector2(1.1199988, 1)
+texture = ExtResource("1_ggtba")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1506912629]
+offset_top = -4.0
+offset_right = 285.0
+offset_bottom = 504.0
+scale = Vector2(1.4762654, 1)
+texture = ExtResource("1_ggtba")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=997031896]
+offset_left = 730.00006
+offset_top = -4.0
+offset_right = 1015.00006
+offset_bottom = 504.0
+scale = Vector2(1.4762666, 1)
+texture = ExtResource("1_ggtba")
+
+[node name="pajarito" type="RigidBody2D" parent="." unique_id=1638192300]
+position = Vector2(480, 273)
+gravity_scale = 2.0
+script = ExtResource("2_y884q")
+velocidad = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pajarito" unique_id=719233189]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ggtba")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pajarito" unique_id=1352375654]
+position = Vector2(4, 3)
+sprite_frames = SubResource("SpriteFrames_oh5c5")
+frame_progress = 0.6249488
+
+[node name="arriba" type="Marker2D" parent="pajarito" unique_id=1615785590]
+position = Vector2(401, -263)
+
+[node name="abajo" type="Marker2D" parent="pajarito" unique_id=1752279092]
+position = Vector2(412, 174)
+
+[node name="aleteo" type="AudioStreamPlayer" parent="pajarito" unique_id=1653902626]
+stream = ExtResource("5_p388j")
+script = ExtResource("6_0vjd0")
+
+[node name="Instanciador de tuberias" type="Node2D" parent="." unique_id=846476767]
+position = Vector2(495, 241)
+script = ExtResource("5_rpgen")
+
+[node name="tuberias" type="Node2D" parent="Instanciador de tuberias" unique_id=1795582687]
+position = Vector2(1069, -260)
+
+[node name="tuberia" parent="Instanciador de tuberias/tuberias" unique_id=1328633461 instance=ExtResource("6_geapt")]
+position = Vector2(-129, -103)
+
+[node name="tuberia2" parent="Instanciador de tuberias/tuberias" unique_id=2112933184 instance=ExtResource("6_geapt")]
+
+[node name="tuberia3" parent="Instanciador de tuberias/tuberias" unique_id=2073187222 instance=ExtResource("6_geapt")]
+position = Vector2(-282, 17)
+
+[node name="tuberia4" parent="Instanciador de tuberias/tuberias" unique_id=1749694635 instance=ExtResource("6_geapt")]
+position = Vector2(95, -98)
+
+[node name="tuberia5" parent="Instanciador de tuberias/tuberias" unique_id=25481397 instance=ExtResource("6_geapt")]
+position = Vector2(269, 0)
+
+[node name="tuberia6" parent="Instanciador de tuberias/tuberias" unique_id=899480226 instance=ExtResource("6_geapt")]
+position = Vector2(635, -10)
+
+[node name="tuberia7" parent="Instanciador de tuberias/tuberias" unique_id=829524429 instance=ExtResource("6_geapt")]
+position = Vector2(430, -95)
+
+[node name="tuberia8" parent="Instanciador de tuberias/tuberias" unique_id=1901235016 instance=ExtResource("6_geapt")]
+position = Vector2(966, 66)
+
+[node name="tuberia9" parent="Instanciador de tuberias/tuberias" unique_id=192551866 instance=ExtResource("6_geapt")]
+position = Vector2(752, -48)
+
+[node name="tuberia10" parent="Instanciador de tuberias/tuberias" unique_id=534785157 instance=ExtResource("6_geapt")]
+position = Vector2(1104, -50)
+
+[node name="spawn_arriba" type="Marker2D" parent="Instanciador de tuberias" unique_id=335210845]
+position = Vector2(-5, -117)
+
+[node name="spawn_abajo" type="Marker2D" parent="Instanciador de tuberias" unique_id=798082754]
+position = Vector2(-5, 272)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=383482354]
+position = Vector2(560, 575)
+scale = Vector2(1, 1.24)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1559248888]
+scale = Vector2(1, 1.0645201)
+texture = ExtResource("6_rpgen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=829740446]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_5v5b1")
+
+[node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D" unique_id=130787936]
+position = Vector2(-331, 1.6128845)
+scale = Vector2(1, 1.0959638)
+texture = ExtResource("6_rpgen")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=770017919]
+position = Vector2(-473, 1.6128845)
+scale = Vector2(1, 1.0959638)
+texture = ExtResource("6_rpgen")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=164390109]
+position = Vector2(328, 1.6128845)
+scale = Vector2(1, 1.0959638)
+texture = ExtResource("6_rpgen")
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D" unique_id=101047163]
+position = Vector2(533, 1.6128845)
+scale = Vector2(1, 1.0959638)
+texture = ExtResource("6_rpgen")
+
+[node name="Timer" type="Timer" parent="." unique_id=466810359]
+wait_time = 0.975
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=794998896]
+
+[node name="ThemedTimer" parent="." unique_id=1194462491 instance=ExtResource("8_ybg5o")]
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=1421499924]
+stream = ExtResource("11_b6wap")
+script = ExtResource("6_0vjd0")
+
+[connection signal="timeout" from="Timer" to="Instanciador de tuberias" method="_on_timer_timeout"]

@@ -42,6 +42,7 @@ func _on_area_entered(area: Area2D) -> void:
 	print("Área detectada: ", area.name, " | grupos: ", area.get_groups())
 	if area.is_in_group("hurtbox"):
 		print("¡Es el hurtbox! Restando vida...")
+		Global.minigame_win= 0
 		Global.lives -= 1
 		Global.minigames_done -= 1
 		get_tree().call_deferred("change_scene_to_file", "res://escenas/level_scene.tscn")

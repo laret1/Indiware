@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbvg0iy0mqrgh"
+path="res://.godot/imported/Energy Theme - Jextor.wav-6066d1506bdb93ef5e9fe4b7fdc45897.sample"
+
+[deps]
+
+source_file="res://Energy Theme - Jextor.wav"
+dest_files=["res://.godot/imported/Energy Theme - Jextor.wav-6066d1506bdb93ef5e9fe4b7fdc45897.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

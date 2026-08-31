@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ikn7dp6a38je" path="res://pixil-frame-0(18).png" id="1_g0qwb"]
 [ext_resource type="FontFile" uid="uid://dnieef7gw5jt5" path="res://KarmaFuture.ttf" id="2_fbasp"]
 [ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="3_35fbv"]
-[ext_resource type="Script" uid="uid://b21r8pqjgt41" path="res://Scripts/start.gd" id="4_ix71s"]
+[ext_resource type="Script" uid="uid://hypwtkp4hbhx" path="res://escenas/volver.gd" id="5_ix71s"]
 [ext_resource type="Script" uid="uid://c7qxktosdx3wp" path="res://Scripts/salir.gd" id="5_r41ll"]
 [ext_resource type="AudioStream" uid="uid://bjqgdrsrema4k" path="res://make_more_sound-8-bit-video-game-win-level-sound-version-1-145827.mp3" id="7_ix71s"]
 [ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="8_r41ll"]
@@ -36,13 +36,13 @@ offset_top = 277.0
 offset_right = 532.0
 offset_bottom = 317.0
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=58509279]
+[node name="Volver" type="Button" parent="VBoxContainer" unique_id=58509279]
 layout_mode = 2
 theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("3_35fbv")
 theme_override_font_sizes/font_size = 26
 text = "Volver a iniciar"
-script = ExtResource("4_ix71s")
+script = ExtResource("5_ix71s")
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=301621098]
 layout_mode = 2
@@ -56,5 +56,5 @@ script = ExtResource("5_r41ll")
 stream = ExtResource("7_ix71s")
 script = ExtResource("8_r41ll")
 
-[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Volver" to="VBoxContainer/Volver" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_pressed"]

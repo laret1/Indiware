@@ -12,15 +12,18 @@ var time
 func perder ():
 			get_tree().change_scene_to_file("res://escenas/pantalla_game_over.tscn")
 func _ready() -> void:
-	if Global.minigames_done != 0:
+	if Global.minigame_win == 1:
 		sonido_ganar.playing = true
-	else:
+	elif Global.minigame_win == 2:
+		pass
+	elif Global.minigame_win == 0:
 		pass
 	await Timer(5.0) # using the function created
 	
 	
-	if Global.minigames_done < 5: # if you havent completed 3 minigames yet 
+	if Global.minigames_done < 6: # if you havent completed 3 minigames yet 
 		Global.minigames_done = Global.minigames_done +1
+		
 		get_tree().change_scene_to_file("res://escenas/minigame_" + str(Global.minigames_done) + ".tscn") # changes your scene by arranging this frankenstein path. 
 # Above, your script is being told to go to the next minigame. If the 
 # current minigame is Level 1, then you would be on minigame 1. If you 

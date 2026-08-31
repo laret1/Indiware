@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dc7ps50b3kygf"
+path="res://.godot/imported/05. Wing.mp3-021f9abfdc3422fbb1b1f5a4060646df.mp3str"
+
+[deps]
+
+source_file="res://05. Wing.mp3"
+dest_files=["res://.godot/imported/05. Wing.mp3-021f9abfdc3422fbb1b1f5a4060646df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -151,6 +151,7 @@ func _on_boton_jugar_pressed():
 		if es_jugada_valida(resultado):
 			label_resultado.modulate = Color.GREEN
 			get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
+			Global.minigame_win= 1
 		else:
 			label_resultado.modulate = Color.RED
 
@@ -206,6 +207,8 @@ func es_jugada_valida(resultado: String) -> bool:
 	
 func _process(delta: float) -> void:
 	if timer_end:
+		Global.minigame_win= 0
 		Global.lives -= 1
 		Global.minigames_done -=1
 		get_tree().change_scene_to_file("res://escenas/level_scene.tscn")
+		
