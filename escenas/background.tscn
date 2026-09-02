@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b21r8pqjgt41" path="res://Scripts/start.gd" id="2_in8bi"]
 [ext_resource type="Script" uid="uid://c7qxktosdx3wp" path="res://Scripts/salir.gd" id="3_7kjbg"]
 [ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="3_rir2q"]
+[ext_resource type="Script" uid="uid://fy6u3vcjb5kb" path="res://escenas/tienda.gd" id="6_bytjq"]
 [ext_resource type="AudioStream" uid="uid://iatte7jnmc4f" path="res://inono777-game-8-bit-399898.mp3" id="6_h1nqr"]
 [ext_resource type="Script" uid="uid://bqp3dbrtq6mon" path="res://escenas/audio_stream_player.gd" id="7_bytjq"]
 
@@ -49,6 +50,14 @@ theme_override_font_sizes/font_size = 26
 text = "Salir"
 script = ExtResource("3_7kjbg")
 
+[node name="Tienda" type="Button" parent="VBoxContainer" unique_id=1035283679]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("3_rir2q")
+theme_override_font_sizes/font_size = 26
+text = "Shop"
+script = ExtResource("6_bytjq")
+
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=2023523952]
 stream = ExtResource("6_h1nqr")
 autoplay = true
@@ -56,3 +65,4 @@ script = ExtResource("7_bytjq")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tienda" to="VBoxContainer/Tienda" method="_on_pressed"]
