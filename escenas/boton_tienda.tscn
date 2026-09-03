@@ -2,12 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dylqc8bbhlnm5" path="res://boton_tienda.gd" id="1_nf7gx"]
 [ext_resource type="FontFile" uid="uid://b36btblulwtcy" path="res://ArcadeClassic.ttf" id="2_mybik"]
+[ext_resource type="Texture2D" uid="uid://delv1vtyuyb6g" path="res://92468-mushroom-text-bros-mario-super-red.png" id="3_mybik"]
 
 [node name="Boton tienda" type="Node2D" unique_id=1742290738]
 script = ExtResource("1_nf7gx")
 
 [node name="Button" type="Button" parent="." unique_id=1017588694]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 267.0
+offset_bottom = 48.0
+theme_override_constants/icon_max_width = 0
 theme_override_fonts/font = ExtResource("2_mybik")
-flat = true
+text = "Sans"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=96959970]
+offset_right = 54.0
+offset_bottom = 48.0
+texture = ExtResource("3_mybik")
+expand_mode = 1

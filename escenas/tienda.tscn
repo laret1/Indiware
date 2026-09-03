@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dbeaq71tddc40"]
 
+[ext_resource type="PackedScene" uid="uid://d0agwtf6copro" path="res://escenas/boton_tienda.tscn" id="1_5ur6e"]
+
 [node name="Tienda" type="Node2D" unique_id=1532293659]
 metadata/_edit_vertical_guides_ = [3.0]
 
@@ -17,6 +19,4 @@ scale = Vector2(28.465097, 16.36)
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=2124730578]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=84819125]
-custom_minimum_size = Vector2(38.79, 0)
-layout_mode = 2
+[node name="Boton tienda" parent="ScrollContainer/VBoxContainer" unique_id=1742290738 instance=ExtResource("1_5ur6e")]
